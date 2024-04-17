@@ -11,8 +11,8 @@ module.exports = {
     {
       name: '@electron-forge/maker-squirrel',
       config: {
-        name: 'com.duomexing.jtdemo',
-        exe: 'com.duomexing.jtdemo.exe',
+        // name: 'com.duomexing.jtdemo',
+        // exe: 'com.duomexing.jtdemo.exe',
         iconUrl: '/src/icon.ico',
       },
     },
