@@ -1,27 +1,30 @@
+const path = require('path')
 const { FusesPlugin } = require('@electron-forge/plugin-fuses');
 const { FuseV1Options, FuseVersion } = require('@electron/fuses');
+
+const iconPath = path.resolve(__dirname, 'src/icon.ico')
 
 module.exports = {
   packagerConfig: {
     asar: true,
-    icon: '/src/icon',
+    icon: iconPath,
   },
   rebuildConfig: {},
   makers: [
     {
       name: '@electron-forge/maker-squirrel',
       config: {
-        iconUrl: '/src/icon.ico',
+        iconUrl: iconPath,
       },
       platform: ['win32'],
     },
-    // {
-    //   name: '@electron-forge/maker-zip',
-    //   platforms: ['darwin'],
-    //   config: {
-    //     icon: '/src/icon.ico',
-    //   }
-    // },
+    {
+      name: '@electron-forge/maker-zip',
+      platforms: ['win32'],
+      config: {
+        icon: '/src/icon.ico',
+      }
+    },
     // {
     //   name: '@electron-forge/maker-deb',
     //   config: {},
